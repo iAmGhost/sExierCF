@@ -53,5 +53,4 @@
 
 ### Google Chrome
 1. [Tampermonkey 확장 설치](https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo/)
-2. 다운로드 링크를 **우클릭-새 탭에서 열기** 버튼으로 엽니다.
-3. 새로 뜨는 Tampermonkey 창에서 Install 버튼을 누릅니다.
+2. 다운로드 링크 눌러 유저 스크립트 설치 
