@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        sExierCF
 // @namespace   http://iamghost.kr
-// @version     2.0.0a
+// @version     2.0.0b
 // @description better ExCF!
 // @include     http://s.excf.com/*
 // @include     http://excf.com/*
@@ -85,6 +85,7 @@ $(document).ready(function() {
         if (today.getMonth()+1 == 4 && today.getDate() == 1) {
             if (!GM_getValue("april_fools")) {
                 alert("회원 탈퇴가 완료되었습니다.");
+                alert("뻥입니다. - 나유령")
                 GM_setValue("april_fools", true);
             }
         }
