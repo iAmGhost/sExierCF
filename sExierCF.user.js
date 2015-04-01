@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name        sExierCF
 // @namespace   http://iamghost.kr
-// @version     2.0.0b
+// @version     2.0.0c
 // @description better ExCF!
 // @include     http://s.excf.com/*
 // @include     http://excf.com/*
 // @require     https://openuserjs.org/src/libs/sizzle/GM_config.js
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
+// @require     https://raw.githubusercontent.com/madapaja/jquery.selection/master/src/jquery.selection.js
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_deleteValue
