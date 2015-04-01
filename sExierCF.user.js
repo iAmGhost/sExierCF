@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        sExierCF
 // @namespace   http://iamghost.kr
-// @version     2.0.0c
+// @version     2.0.1
 // @description better ExCF!
 // @include     http://s.excf.com/*
 // @include     http://excf.com/*
@@ -524,6 +524,7 @@ function writeFormModder()
         memo.val(last_content);
         subject.val(GM_getValue("last_subject"));
         category.val(GM_getValue("last_category"));
+        document.check_attack.check.value = 0;
         
         
        alert("모바일 페이지 로그인이 안 되어있어 글쓰기에 실패하였습니다.\n첨부파일을 다시 선택해주세요.");
