@@ -22,7 +22,8 @@ var boardMap = {
     "game": "game",
     "eatball": "eatball",
     "opin": "general",
-    "cre1": "creation"
+    "cre1": "creation",
+    "ddf": "that"
 };
 
 $(document).ready(function() {
@@ -417,8 +418,9 @@ function mobileRedirector(uri)
         deleteLastData();
     }
     else if (mode == "post") {
-        GM_setValue("last_board", key);
-        history.go(-2);
+    	alert("모바일 페이지 로그인이 안 되어있어 글쓰기에 실패하였습니다.\n글쓰기 버튼을 누르면 내용은 복구됩니다만, 첨부파일은 다시 선택해주세요.");
+
+        location.href = "http://excf.com/bbs/zboard.php?id=" + key;
     }
 }
 
@@ -526,8 +528,6 @@ function writeFormModder()
         category.val(GM_getValue("last_category"));
         document.check_attack.check.value = 0;
         
-        
-       alert("모바일 페이지 로그인이 안 되어있어 글쓰기에 실패하였습니다.\n첨부파일을 다시 선택해주세요.");
         deleteLastData();
     }
     
@@ -535,9 +535,9 @@ function writeFormModder()
         filter = new Array();
         filterResult = new Array();
         
-        filter.push(/^https?:\/\/.+?(\?v=|\/\d\/|\/embed\/|\/v\/|\.be\/)([a-zA-Z0-9\-\_]+)(\?.+)?$/gm);
-        filterResult.push('<embed src="http://www.youtube.com/v/$2?version=3&amp;hl=ko_KR" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed>');
-        
+   		filter.push(/^http.+?(?:youtube\.com\/\S*(?:(?:\/e(?:mbed))?\/|watch\?(?:\S*?&?v\=))|youtu\.be\/)([a-zA-Z0-9_-]{6,11})/gm);
+    	filterResult.push('<embed src="http://www.youtube.com/v/$1?version=3&amp;hl=ko_KR" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed>\n유튜브 영상: <a href="https://youtu.be/$1">https://youtu.be/$1</a>');
+ 
         filter.push(new RegExp('<iframe(.+?)</iframe>', "g"));
         filterResult.push('<embed$1</embed>');
         
